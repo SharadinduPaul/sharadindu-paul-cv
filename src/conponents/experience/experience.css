@@ -1,0 +1,171 @@
+.exp{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.designer, .programer{
+    /* background-color: greenyellow; */
+    height: 50vh ;
+    width: 60%;
+    position: absolute;
+    background-color: #fff;
+    color: black;
+    transition: 0.5s;
+}
+.designer{
+    display: flex;
+    flex-direction: row;
+    /* z-index: 2; */
+    transform: translate(-10%, -20%);
+    clip-path: polygon(20% 40%, 20% 40%, 25% 50%, 25% 50%, 20% 60%, 20% 60%, 0 60%, 0 40%);
+}
+.desActive{
+    /* background-color:  var(--component-hex); */
+    background: var(--gradient-hex);
+    color: white;
+    animation: desActive 1.5s ease-in-out forwards;
+}
+@keyframes desActive {
+    0%{
+        clip-path: polygon(20% 40%, 20% 40%, 25% 50%, 25% 50%, 20% 60%, 20% 60%, 0 60%, 0 40%);        
+    }
+    40%{
+        clip-path: polygon(20% 40%, 20% 40%, 100% 40%, 100% 60%, 20% 60%, 20% 60%, 0 60%, 0 40%);
+    }
+    60%{
+        clip-path: polygon(20% 40%, 60% 0, 100% 40%, 100% 60%, 60% 100%, 20% 60%, 0 60%, 0 40%);
+    }
+    80%{
+        clip-path: polygon(20% 40%, 60% 0, 100% 0, 100% 100%, 60% 100%, 20% 60%, 0 60%, 0 40%);
+    }
+    100%{
+        clip-path: polygon(20% 40%, 30% 0, 100% 0, 100% 100%, 30% 100%, 20% 60%, 0 60%, 0 40%);
+        background-color:  var(--component-hex);
+    }
+}
+.desInactive{
+    /* background-color:  var(--component-hex); */
+    animation: desInactive 1.5s ease-in-out forwards;
+    z-index: 2;
+}
+@keyframes desInactive{
+    0%{
+        clip-path: polygon(20% 40%, 30% 0, 100% 0, 100% 100%, 30% 100%, 20% 60%, 0 60%, 0 40%);                
+    }
+    40%{
+        clip-path: polygon(20% 40%, 30% 0, 60% 60%, 60% 40%, 30% 100%, 20% 60%, 0 60%, 0 40%);
+    }
+    65%{
+        clip-path: polygon(20% 40%, 20% 40%, 20% 60%, 20% 40%, 20% 60%, 20% 60%, 0 60%, 0 40%);           
+    }
+    80%{
+        clip-path: polygon(20% 40%, 20% 40%, 20% 50%, 20% 50%, 20% 60%, 20% 60%, 0 60%, 0 40%);
+    }
+    100%{
+        clip-path: polygon(20% 40%, 20% 40%, 25% 50%, 25% 50%, 20% 60%, 20% 60%, 0 60%, 0 40%);
+        background-color: white;
+    }
+}
+.programer{
+    display: flex;
+    flex-direction: row-reverse;
+    clip-path: polygon(80% 40%, 80% 40%, 100% 40%, 100% 60%, 80% 60%, 80% 60%, 75% 50%, 75% 50%);
+    transform: translate(10%, 20%);
+}
+.proActive{
+    color: white;
+    background: var(--gradient-hex);
+    animation: proActive 1.5s ease-in-out forwards;
+}
+@keyframes proActive{
+    0%{
+        clip-path: polygon(80% 40%, 80% 40%, 100% 40%, 100% 60%, 80% 60%, 80% 60%, 75% 50%, 75% 50%); 
+    }
+    40%{
+        clip-path: polygon(80% 40%, 80% 40%, 100% 40%, 100% 60%, 80% 60%, 80% 60%, 0 60%, 0 40%);
+    }
+    60%{
+        clip-path: polygon(40% 0, 80% 40%, 100% 40%, 100% 60%, 80% 60%, 40% 100%, 0 60%, 0 40%); 
+    }
+    80%{
+        clip-path: polygon(40% 0, 80% 40%, 100% 40%, 100% 60%, 80% 60%, 40% 100%, 0 100%, 0 0);
+    }
+    100%{
+        clip-path: polygon(70% 0, 80% 40%, 100% 40%, 100% 60%, 80% 60%, 70% 100%, 0 100%, 0 0);    
+        background-color:  var(--component-hex);
+    }
+}
+.proInactive{
+    animation: proInactive 1.5s ease-in-out forwards;
+}
+@keyframes proInactive{
+    0%{
+        clip-path: polygon(70% 0, 80% 40%, 100% 40%, 100% 60%, 80% 60%, 70% 100%, 0 100%, 0 0);        
+    }
+    40%{
+        clip-path: polygon(70% 0, 80% 40%, 100% 40%, 100% 60%, 80% 60%, 70% 100%, 40% 40%, 40% 60%);        
+    }
+    65%{
+        clip-path: polygon(80% 40%, 80% 40%, 100% 40%, 100% 60%, 80% 60%, 80% 60%, 80% 50%, 80% 50%);        
+    }
+    80%{
+        clip-path: polygon(80% 40%, 80% 40%, 100% 40%, 100% 60%, 80% 60%, 80% 60%, 80% 50%, 80% 50%);        
+    }
+    100%{
+        clip-path: polygon(80% 40%, 80% 40%, 100% 40%, 100% 60%, 80% 60%, 80% 60%, 75% 50%, 75% 50%);
+        background-color: #fff;
+    }
+}
+.proContent, .desContent{
+    flex: 5;
+    padding: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+.proContent a, .desContent a{
+    text-decoration: none;
+    color: inherit;
+    transition: 0.4s;
+    animation: breatheA 1s alternate infinite ease-in;
+}
+@keyframes breatheA {
+    from{color: inherit;}    
+    to{color: rgba(175, 175, 175, 0.336);}
+}
+.proContent a:hover, .desContent a:hover{
+    animation-play-state: paused;
+    color: black;
+    text-decoration: underline;
+}
+.proContent > i, .desContent > i{
+    font-size: 50px;
+    margin: 10px;
+}
+.proHead, .desHead{
+    transition: 0.4s;
+    flex: 1;
+    padding: 20px;
+    font-family: 'Major Mono Display', monospace;
+    font-weight: bold;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 0px solid var(--component-hex);
+}
+.proHead:hover{
+    border-right: 8px solid #c124ff;
+}
+.desHead:hover{
+    border-left: 8px solid #30bdff;
+}
+.desHead{
+    letter-spacing: 1.5px;
+}

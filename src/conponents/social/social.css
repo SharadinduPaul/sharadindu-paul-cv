@@ -1,0 +1,69 @@
+.social{
+    position: fixed;
+    top: 50%;
+    z-index: 2;
+}
+.facebook, .instagram, .whatsapp, .s1, .s2{
+    position: absolute;
+    /* background-color: var(--component-hex); */
+    background: linear-gradient(266deg, rgba(48,255,252,1) 0%, rgba(245,36,255,1) 100%);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    clip-path: polygon(0 50%, 0 50%, 0 50%, 0 50%);
+    height: 75px;
+    width: 125px;
+    margin: 2px;
+    transform-origin: left;
+    transition: 0.5s;
+}
+.facebook:hover, .instagram:hover, .whatsapp:hover{
+    padding-right:20px ;
+    clip-path: polygon(0 50%, 100% 100%, 92% 50%, 100% 0);
+}
+.facebook > a, .instagram > a, .whatsapp > a{
+    color: black;
+    font-size: 35px;
+}
+.s1{
+    transform: rotate(-90deg);
+}
+.facebook{
+    transform: rotate(-45deg);
+}
+.whatsapp{
+    transform: rotate(0deg);
+}
+.instagram{
+    transform: rotate(45deg);
+}
+.s2{
+    transform: rotate(90deg);
+}
+.socialActive{
+    animation: socialActive 1.2s ease-in-out forwards;
+}
+@keyframes socialActive{
+    0%{
+        clip-path: polygon(0 50%, 0 50%, 0 50%, 0 50%);
+    }
+    80%{
+        clip-path: polygon(0 50%, 74% 13%, 100% 50%, 74% 87%);
+    }
+    100%{
+        clip-path: polygon(0 50%, 100% 0, 100% 50%, 100% 100%);
+    }
+}
+.socialInactive{
+    animation: socialInactive 1.2s ease-in-out forwards;
+}
+@keyframes socialInactive{
+    0%{
+        clip-path: polygon(0 50%, 100% 0, 100% 50%, 100% 100%);
+    }
+    100%{
+        clip-path: polygon(0 50%, 70% 50%, 100% 50%, 70% 50%);
+    }
+}

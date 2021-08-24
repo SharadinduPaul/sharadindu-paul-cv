@@ -1,0 +1,56 @@
+.preloader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 50;
+    color: black;
+    background-color: var(--body-hex);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 45% 100%, 55% 0, 55% 0, 45% 100%, 0 100%);
+    animation: loader 1s 4s ease-in-out forwards;
+}
+@keyframes loader{
+    0%{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 45% 100%, 55% 0, 55% 0, 45% 100%, 0 100%);
+        opacity: 1;
+    }
+    100%{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 100% 0, 0 0, 0 100%, 0 100%);
+        opacity: 0.5;
+    }
+}
+.slideDown{
+    position: relative;
+    height: 140vh;
+    width: 100vw;
+    background: var(--gradient-hex);
+    clip-path: polygon(100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateY(-100%);
+    animation: slideDown 3s 0.5s ease-in-out forwards;
+}
+@keyframes slideDown{
+    0%{transform: translateY(-100%);}
+    25%{transform: translateY(-30%);}
+    100%{transform: translateY(-5%);}
+}
+.slideDown > div{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 60px;
+    opacity: 0;
+    transform: translateY(150%);
+    animation: fadeIn 1s 1s ease-in forwards;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

@@ -1,0 +1,80 @@
+.contact{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact > div > i{
+    background: var(--gradient-hex);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 200px;
+    margin: 0px 5vw;
+}
+form{
+    background: var(--gradient-hex);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 60vh;
+    width: 45vh;
+    margin: 0px 5vw;
+    transition: 0.5s ease-in;
+    clip-path: polygon(0 0, 75% 0, 100% 20%, 100% 100%, 25% 100%, 0 80%);
+}
+form:hover{
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 100% 100%, 0% 100%, 0 100%);
+}
+form:focus-within{
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 100% 100%, 0% 100%, 0 100%);
+}
+form > input, form > textarea{
+    transition: 0.35s ease-in;
+    width: 40vh;
+    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom: 3px solid white;
+    font-size: 17px;
+}
+form > input:hover, form > textarea:hover{
+    background-color: #fff;
+}
+form > input:focus, form > textarea:focus{
+    background-color: #fff;
+}
+form > input{
+    margin: 0px 0px 15px 0px;
+    padding: 10px 15px;
+}
+form > textarea{
+    resize: none;
+    padding: 10px 15px;
+}
+::placeholder {
+    color: rgb(0, 0, 0);
+  }
+form > button{
+    font-size: 18px;
+    background-color: white;
+    height: 4vh;
+    width: 15vh;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    clip-path: polygon(10% 0, 90% 0, 90% 50%, 90% 100%, 10% 100%, 10% 50%);
+}
+form > button:hover{
+    clip-path: polygon(10% 0, 90% 0, 85% 50%, 90% 100%, 10% 100%, 15% 50%);
+}
+form > h2{
+    margin: 13px;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: lighter;
+    color: rgb(26, 26, 26);
+}
